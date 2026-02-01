@@ -8,8 +8,9 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: {type: String,require: true},
   confirmPassword:{type: String,require: true},
-  image: {type: String},
-
+  image: {type: String,require: true},
+  studentId:{type: String , unique: true},
+  dob: Date,
   otp: String,
   otpExpire: Date
 }, { timestamps: true });

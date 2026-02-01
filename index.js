@@ -30,4 +30,4 @@ app.use("/api", require("./src/routes/userRoutes.js"));
 //   console.log("Generating daily PDF...");
 //   generateAndSendPDF("ravipratihast69@gmail.com"); // Replace with recipient email
 // });
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(5000 ||process.env.PORT, () => console.log("Server running on port 5000"));

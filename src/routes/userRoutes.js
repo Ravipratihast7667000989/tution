@@ -5,7 +5,7 @@ const upload = require("../middlewares/uploadet.js");
 const auth = require("../controllers/userController.js");
 
 router.post("/register", upload.single("image"), auth.register);
-router.get("/alluser",auth.getAllUser);
+router.get("/profile",auth.getAllUser);
 router.post("/login", auth.login);
 router.post("/forgot-password", auth.forgotPassword);
 router.post("/reset-password", auth.resetPassword);

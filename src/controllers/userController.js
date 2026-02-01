@@ -4,10 +4,15 @@ const bcrypt = require("bcryptjs");
 const { name } = require("ejs");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
+const generateStudentId = require("../utils/generateStudentId.js");
+const Student = require("../model/counter_model.js");
+
 
 /* REGISTER */
 exports.register = async (req, res) => {
   const { firstname,lastname,phoneNumber,email ,password } = req.body;
+  const studentId = await generateStudentId();
+
 
   const existingUser = await User.findOne({ email });
 
@@ -16,7 +21,6 @@ if (existingUser) {
     message: "Email already registered"
   });
 }
-
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -27,6 +31,8 @@ if (existingUser) {
     email,
     password: hashedPassword,
     image: req.file ? req.file.path : null,
+    studentId,
+
 
   });
 
