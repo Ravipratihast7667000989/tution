@@ -8,6 +8,7 @@ const generateStudentId = require("../utils/generateStudentId.js");
 const Student = require("../model/counter_model.js");
 
 
+
 /* REGISTER */
 exports.register = async (req, res) => {
   const { firstname,lastname,phoneNumber,email ,password } = req.body;
@@ -133,3 +134,5 @@ exports.resetPassword = async (req, res) => {
 
   res.json({ message: "Password changed successfully" });
 };
+
+
