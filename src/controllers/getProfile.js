@@ -7,7 +7,7 @@ const getProfile = async (req, res) => {
     res.status(200).json({
       firstname: user.firstname,
       lastname:user.lastname,
-      phonenumber:user.phoneNumber,
+      phoneNumber:user.phoneNumber,
       email: user.email,
       image: user.image
     });
